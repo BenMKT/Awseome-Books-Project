@@ -18,3 +18,11 @@ form.addEventListener('submit',(event)=>{
     event.preventDefault();
     form.reset()
 })
+
+function remove(title, author) {
+    for (let i = 0; i < bookKLibrary.length; i++) {
+        if(bookKLibrary[i].title === title && bookKLibrary[i].author === author){
+            bookKLibrary.splice(i,1);           
+        }
+    }
+}
