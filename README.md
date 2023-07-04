@@ -34,9 +34,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Awseome-Books-Project <a name="about-project"></a>
+# 📖 Awseome Books Project <a name="about-project"></a>
 
-**Awseome-Books-Project** is a virtual library project to track a collection of books.
+**Awseome Books Project** is a virtual library project to track a collection of books.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -181,9 +181,9 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Adoption of JS Classes]**
-- [ ] **[Add Navigation]**
-- [ ] **[Page Styling]**
+- [ ] **Adoption of JS Classes**
+- [ ] **Add Navigation**
+- [ ] **Page Styling**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
