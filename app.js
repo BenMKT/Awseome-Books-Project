@@ -14,7 +14,7 @@ function bookHTML() {
     += `<div>
     <p>${n.title}</p>
     <p>${n.author}</p>
-    <button type='button' onclick='remove('${n.title}','${n.author}')' >Remove</button>
+    <button type='button' onclick='remove("${n.title}","${n.author}")'>Remove</button>
     <hr>
   </div>`;
   });
@@ -29,7 +29,7 @@ function addBook() {
   bookHTML();
 }
 // eslint-disable-next-line
-function remove(title, author) {
+function remove(title, author) {;
   for (let i = 0; i < bookKLibrary.length; i + 1) {
     if (bookKLibrary[i].title === title && bookKLibrary[i].author === author) {
       bookKLibrary.splice(i, 1);
