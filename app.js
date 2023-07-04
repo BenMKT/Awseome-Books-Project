@@ -4,19 +4,17 @@ function Book(title, author) {
 }
 
 let bookKLibrary = [];
-
 // eslint-disable-next-line
 function bookHTML() {
-  const bookSection = document.querySelector('#library');
+  let bookSection = document.querySelector('#library');
   bookSection.innerHTML = '';
   bookKLibrary.forEach((n) => {
-    bookSection.innerHTML
-    += `<div>
-    <p>${n.title}</p>
-    <p>${n.author}</p>
-    <button type='button' onclick='remove("${n.title}","${n.author}")'>Remove</button>
-    <hr>
-  </div>`;
+    bookSection.innerHTML += `<div>
+        <p>${n.title}</p>
+        <p>${n.author}</p>
+        <button type='button' onclick=remove('${n.title}','${n.author}') >Remove</button>
+        <hr>
+    </div>`;
   });
 }
 // eslint-disable-next-line
@@ -29,8 +27,8 @@ function addBook() {
   bookHTML();
 }
 // eslint-disable-next-line
-function remove(title, author) {;
-  for (let i = 0; i < bookKLibrary.length; i + 1) {
+function remove(title, author) {
+  for (let i = 0; i < bookKLibrary.length; i++) {
     if (bookKLibrary[i].title === title && bookKLibrary[i].author === author) {
       bookKLibrary.splice(i, 1);
     }
