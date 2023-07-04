@@ -9,9 +9,9 @@ let bookKLibrary = [];
 function bookHTML() {
   const bookSection = document.querySelector('#library');
   bookSection.innerHTML = '';
-  bookKLibrary.forEach(n => {
+  bookKLibrary.forEach((n) => {
     bookSection.innerHTML
-    +=`<div>
+    += `<div>
     <p>${n.title}</p>
     <p>${n.author}</p>
     <button type='button' onclick='remove('${n.title}','${n.author}')' >Remove</button>
