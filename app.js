@@ -10,14 +10,14 @@ function bookHTML() {
   const bookSection = document.querySelector('#library');
   bookSection.innerHTML = '';
   bookKLibrary.forEach(n => {
-    bookSection.innerHTML+=
-    `<div>
+    bookSection.innerHTML
+    +=`<div>
     <p>${n.title}</p>
     <p>${n.author}</p>
     <button type='button' onclick='remove('${n.title}','${n.author}')' >Remove</button>
     <hr>
-  </div>`
-});
+  </div>`;
+  });
 }
 // eslint-disable-next-line
 function addBook() {
@@ -35,19 +35,19 @@ function remove(title, author) {
       bookKLibrary.splice(i, 1);
     }
   }
-  localStorage.setItem("jsonLibrary", JSON.stringify(bookKLibrary));
+  localStorage.setItem('jsonLibrary', JSON.stringify(bookKLibrary));
   bookHTML();
 }
 
 const form = document.querySelector('form');
 form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    form.reset();
+  event.preventDefault();
+  form.reset();
 });
 
 window.addEventListener('load', () => {
-    if (localStorage.getItem('jsonLibrary')) {
-        bookKLibrary = JSON.parse(localStorage.getItem('jsonLibrary'));
-        bookHTML();
-    }
+  if (localStorage.getItem('jsonLibrary')) {
+    bookKLibrary = JSON.parse(localStorage.getItem('jsonLibrary'));
+    bookHTML();
+  }
 });
