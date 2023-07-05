@@ -1,3 +1,4 @@
+
 class BookObject {
   constructor(title, author) {
     this.title = title;
@@ -12,20 +13,14 @@ class Book {
   }
 
   insertHtml() {
-    const bookSection = document.querySelector("#library");
-    bookSection.innerHTML = "";
+    bookSection.innerHTML =''
     this.bookLibrary.forEach((n) => {
-      const bookDiv = document.createElement('div');
-      bookDiv.id = `${n.id}`;
-      const title = document.createElement('p');
-      title.innerHTML = `${n.title}`;
-      const author = document.createElement('p');
-      author.innerHTML = `${n.author}`;
-      const removeBtn = document.createElement('button');
-      removeBtn.type = 'button';
-      removeBtn.className = 'remove';
-      bookSection.appendChild(bookDiv);
-      removeBtn.addEventListener('click', this.remove(bookDiv.id));
+      bookSection.innerHTML += `<div>
+          <p>${n.title}</p>
+          <p>${n.author}</p>
+          <button class='remove' type='button' onclick='bookList.remove("${n.id}")'>Remove</button>
+          <hr>
+      </div>`;
     });
   }
 
@@ -36,22 +31,19 @@ class Book {
     this.insertHtml();
   }
 
-  remove(id) {
-    for (let i = 0; i < this.bookLibrary.length; i += 1) {
-      if (this.bookLibrary[i].id === id) {
-        this.bookLibrary.splice(i, 1);
-      }
-    }
+  remove(idParameter) {
+    this.bookLibrary = this.bookLibrary.filter(book => book.id !== idParameter)
     localStorage.setItem("jsonLibrary", JSON.stringify(this.bookLibrary));
     this.insertHtml();
   }
 }
 
 const bookList = new Book();
+const bookSection = document.querySelector("#library");
 const titleText = document.querySelector("#title");
 const authorText = document.querySelector("#author");
-
 const form = document.querySelector("form");
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   bookList.addBook();
