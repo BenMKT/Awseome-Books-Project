@@ -13,13 +13,14 @@ class Book {
   }
 
   insertHtml() {
-    bookSection.innerHTML =''
+    bookSection.innerHTML = ''
     this.bookLibrary.forEach((n) => {
       bookSection.innerHTML += `<div class='book'>
+        <div class='bookDetail'>
           <p>${n.title}</p>
           <p>${n.author}</p>
+        </div>    
           <button class='remove' type='button' onclick='bookList.remove("${n.id}")'>Remove</button>
-          <hr>
       </div>`;
     });
   }
