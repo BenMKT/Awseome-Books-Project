@@ -15,7 +15,7 @@ class Book {
   insertHtml() {
     bookSection.innerHTML =''
     this.bookLibrary.forEach((n) => {
-      bookSection.innerHTML += `<div>
+      bookSection.innerHTML += `<div class='book'>
           <p>${n.title}</p>
           <p>${n.author}</p>
           <button class='remove' type='button' onclick='bookList.remove("${n.id}")'>Remove</button>
