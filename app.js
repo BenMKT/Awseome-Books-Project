@@ -1,35 +1,50 @@
+const insertHtml = () => {
+  const bookSection = document.querySelector("#library");
+  bookSection.innerHTML = "";
+
+  let bookLibrary = JSON.parse(localStorage.getItem("jsonLibrary"));
+  bookLibrary.forEach((n) => {
+    bookSection.innerHTML += `<div id='${n.id}'>
+        <p>${n.title}</p>
+        <p>${n.author}</p>
+        <button class='remove' type='button'>Remove</button>
+        <hr>
+    </div>`;
+  });
+}
+
 class Book {
   constructor(title, author) {
     this.title = title;
     this.author = author;
+    this.id = (title + author).replace(/\s/g, '');
   }
 
-  bookHTML() {
-    const bookSection = document.querySelector("#library");
-    bookSection.innerHTML = "";
+  addBook() {
+    let bookLibrary = [];
+    if (localStorage.getItem("jsonLibrary")) {
+      bookLibrary = JSON.parse(localStorage.getItem("jsonLibrary"));
+    }
 
-    let bookKLibrary = JSON.parse(localStorage.getItem("jsonLibrary"));
-    bookKLibrary.forEach((n) => {
-      bookSection.innerHTML += `<div>
-          <p>${n.title}</p>
-          <p>${n.author}</p>
-          <button type='button' onclick=remove('${n.title}','${n.author}') >Remove</button>
-          <hr>
-      </div>`;
-      });
+    bookLibrary.push(this);
+    localStorage.setItem("jsonLibrary", JSON.stringify(bookLibrary));
+    insertHtml();
   }
 
-  remove(title, author) {
-    for (let i = 0; i < bookKLibrary.length; i += 1) {
+  remove() {
+    let bookLibrary = [];
+    if (localStorage.getItem("jsonLibrary")) {
+      bookLibrary = JSON.parse(localStorage.getItem("jsonLibrary"));
+    }
+    for (let i = 0; i < bookLibrary.length; i += 1) {
       if (
-        bookKLibrary[i].title === title &&
-        bookKLibrary[i].author === author
+        bookLibrary[i].id === this.id
       ) {
-        bookKLibrary.splice(i, 1);
+        bookLibrary.splice(i, 1);
       }
     }
-    localStorage.setItem("jsonLibrary", JSON.stringify(bookKLibrary));
-    bookHTML();
+    localStorage.setItem("jsonLibrary", JSON.stringify(bookLibrary));
+    insertHtml();
   }
 }
 
@@ -40,30 +55,12 @@ form.addEventListener("submit", (event) => {
   const authorText = document.querySelector("#author");
 
   const book = new Book(titleText.value, authorText.value);
-  let bookKLibrary = JSON.parse(localStorage.getItem("jsonLibrary"));
-  bookKLibrary.push(book);
-  localStorage.setItem("jsonLibrary", JSON.stringify(bookKLibrary));
-
-  bookHTML();
-
+  book.addBook();
   form.reset();
 });
 
 window.addEventListener("load", () => {
   if (localStorage.getItem("jsonLibrary")) {
-
-    const bookSection = document.querySelector("#library");
-    bookSection.innerHTML = "";
-
-    let bookKLibrary = JSON.parse(localStorage.getItem("jsonLibrary"));
-    bookKLibrary.forEach((n) => {
-      bookSection.innerHTML += `<div>
-          <p>${n.title}</p>
-          <p>${n.author}</p>
-          <button type='button' onclick=remove('${n.title}','${n.author}') >Remove</button>
-          <hr>
-      </div>`;
-      });
-    
+    insertHtml();
   }
 });
