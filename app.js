@@ -67,27 +67,27 @@ listbtn.onclick = () => {
   list.style.display = 'flex';
   newbooks.style.display = 'none';
   contact.style.display = 'none';
-  listbtn.style.color= '#375e81';
-  addlistbtn.style.color='inherit';
-  contactbtn.style.color='inherit'
+  listbtn.style.color = '#375e81';
+  addlistbtn.style.color = 'inherit';
+  contactbtn.style.color = 'inherit';
 };
 
 addlistbtn.onclick = () => {
   list.style.display = 'none';
   newbooks.style.display = 'flex';
   contact.style.display = 'none';
-  addlistbtn.style.color= '#375e81'
-  contactbtn.style.color='inherit'
-  listbtn.style.color='inherit'
+  addlistbtn.style.color = '#375e81';
+  contactbtn.style.color = 'inherit';
+  listbtn.style.color = 'inherit';
 };
 
 contactbtn.onclick = () => {
   list.style.display = 'none';
   newbooks.style.display = 'none';
   contact.style.display = 'flex';
-  contactbtn.style.color= '#375e81'
-  listbtn.style.color='inherit'
-  addlistbtn.style.color='inherit'
+  contactbtn.style.color = '#375e81';
+  listbtn.style.color = 'inherit';
+  addlistbtn.style.color = 'inherit';
 };
 
 function clock() {
