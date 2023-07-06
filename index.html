@@ -7,19 +7,43 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <section class="main">
+    <header>
+        <h2>Awesome Books</h2>
+        <nav>
+            <ul>
+                <li><a href="#library">List</a></li>
+                <li><a href="#addBtn">Add new</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="date">Date</div>
+    <section id="library">
         <h1>
-            Awesome Books
+            All awesome books
         </h1>
-        <section id="library">
-
-        </section>
-        <form action="">
+    </section>
+        <section id="newbooks">
+            <h2>Add a new book</h2>
+            <form action="">
             <input type="text" name="title" id="title" placeholder="Title"><br><br>
             <input type="text" name="author" id="author" placeholder="Author"><br><br>
             <button id="addBtn" type="submit">Add</button>
         </form>
-        <script src="app.js"></script>
     </section>
+    <section id="Contact">
+        <h2>Contact Information</h2>
+        <p>Do you have any questions or do you want to say "Hello"?</p>
+        <p>You can reach out to us!</p>
+        <ul>
+            <li>Our e-mail: mail@mail.com</li>
+            <li>Our Phone Number: 04568723334</li>
+            <li>Our Address: Streetname 22, 846462 City, Country</li>
+        </ul>
+    </section>
+    <footer>
+        <p>© Copyright 2023 Awesome Books</p> 
+    </footer>
+    <script src="app.js"></script>
 </body>
 </html>
