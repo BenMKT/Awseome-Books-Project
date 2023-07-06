@@ -58,6 +58,9 @@ window.addEventListener('load', () => {
   if (localStorage.getItem('jsonLibrary')) {
     bookList.insertHtml();
   }
+  list.style.display = 'block';
+  newbooks.style.display = 'none';
+  contact.style.display = 'none';
 });
 
 listbtn.onclick = () => {
@@ -78,12 +81,9 @@ contactbtn.onclick = () => {
   contact.style.display = 'block';
 };
 
-setInterval(clock, 1000);
-
 function clock() {
-  let d = new Date();
-  date.innerHTML = 'Date: ' + d.getDate() + '/' + d.getMonth() + '/' + d.getFullYear() + ' Time: ' +
-    d.getHours() + ":" +
-    d.getMinutes() + ":" +
-    d.getSeconds();
-};
+  const d = new Date();
+  date.innerHTML = `Date: ${d.getDate()}/${d.getMonth()}/${d.getFullYear()} Time: ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`;
+}
+
+setInterval(clock, 1000);
