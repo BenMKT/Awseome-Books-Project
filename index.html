@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Awesome Books project</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <h2>Awesome Books</h2>
         <nav>
             <ul>
-                <li><a href="#library">List</a></li>
-                <li><a href="#addBtn">Add new</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#list" id="listbtn">List</a></li>
+                <li><a href="#newbooks" id="addlistbtn">Add new</a></li>
+                <li><a href="#contact" id="contactbtn">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <div class="date">Date</div>
-    <section id="library">
-        <h1>
-            All awesome books
-        </h1>
+    <span id="date"></span>
+    <section id="list">
+        <h2>All awesome books</h2>
+        <div id="library"></div>
     </section>
-        <section id="newbooks">
-            <h2>Add a new book</h2>
-            <form action="">
+    <section id="newbooks">
+        <h2>Add a new book</h2>
+        <form action="">
             <input type="text" name="title" id="title" placeholder="Title"><br><br>
             <input type="text" name="author" id="author" placeholder="Author"><br><br>
             <button id="addBtn" type="submit">Add</button>
         </form>
     </section>
-    <section id="Contact">
+    <section id="contact">
         <h2>Contact Information</h2>
         <p>Do you have any questions or do you want to say "Hello"?</p>
         <p>You can reach out to us!</p>
@@ -42,8 +43,9 @@
         </ul>
     </section>
     <footer>
-        <p>© Copyright 2023 Awesome Books</p> 
+        <p>© Copyright 2023 Awesome Books</p>
     </footer>
     <script src="app.js"></script>
 </body>
+
 </html>

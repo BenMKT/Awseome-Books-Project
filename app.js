@@ -2,6 +2,13 @@ const bookSection = document.querySelector('#library');
 const titleText = document.querySelector('#title');
 const authorText = document.querySelector('#author');
 const form = document.querySelector('form');
+const listbtn = document.querySelector('#listbtn');
+const addlistbtn = document.querySelector('#addlistbtn');
+const contactbtn = document.querySelector('#contactbtn');
+const list = document.getElementById('list');
+const newbooks = document.getElementById('newbooks');
+const contact = document.getElementById('contact');
+const date = document.getElementById('date');
 
 class Book {
   constructor() {
@@ -52,3 +59,31 @@ window.addEventListener('load', () => {
     bookList.insertHtml();
   }
 });
+
+listbtn.onclick = () => {
+  list.style.display = 'block';
+  newbooks.style.display = 'none';
+  contact.style.display = 'none';
+};
+
+addlistbtn.onclick = () => {
+  list.style.display = 'none';
+  newbooks.style.display = 'block';
+  contact.style.display = 'none';
+};
+
+contactbtn.onclick = () => {
+  list.style.display = 'none';
+  newbooks.style.display = 'none';
+  contact.style.display = 'block';
+};
+
+setInterval(clock, 1000);
+
+function clock() {
+  let d = new Date();
+  date.innerHTML = 'Date: ' + d.getDate() + '/' + d.getMonth() + '/' + d.getFullYear() + ' Time: ' +
+    d.getHours() + ":" +
+    d.getMinutes() + ":" +
+    d.getSeconds();
+};
